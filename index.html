@@ -21,18 +21,19 @@
   </head>
   <body class="bg-zinc-200">
     <div class=" flex justify-between m-1 md:m-2">
-      <div class=" px-2 md:px-4 mt-1 text-xs sm:txet-md md:text-lg lg:text-xl font-semibold">
+      <div class=" px-2 md:px-4 mt-1 text-xs sm:txet-md md:text-lg lg:text-xl font-semibold" id="welcome">
         Log in to get started
       </div>
       <div class=" text-xl md:text-3xl">
         <i class="fa-solid fa-money-bill-transfer"></i>
       </div>
-      <div class=" flex gap-1">
+      <div class="flex gap-1">
         <div class="md:mt-1 rounded-xl h-8">
           <input
             type="text"
             placeholder="user"
             class=" w-8 md:w-20 text-xs md:text-lg rounded-lg md:rounded-xl px-1 md:px-6"
+            id="inputloginusername"
           />
         </div>
         <div class="md:mt-1 rounded-xl h-8">
@@ -40,140 +41,33 @@
             type="text"
             placeholder="pin"
             class=" w-8 md:w-20 text-xs md:text-lg rounded-lg md:rounded-xl px-1 md:px-6"
+            id="inputloginpin"
           />
         </div>
         <i
-          class="fa-solid fa-arrow-right  pt-1 md:pt-2 md:mt-1"
+          class="fa-solid fa-arrow-right  pt-1 md:mt-1 text-xs md:text-sm" id="btnlogin"
         ></i>
       </div>
     </div>
-    <div class="mx-6 sm:mx-24 md:mx-36 lg:mx-50 mt-8 ">
+    <div class="mx-6 sm:mx-24 md:mx-36 lg:mx-50 mt-8 opacity-0" id="mainblock">
       <div class=" flex justify-between text-xl sm:text-2xl md:text-4xl lg:text-5xl">
         <div class="">
           <h1 class="text-sm sm:text-md md:text-xl lg:text-2xl font-bold">Current Balance</h1>
           <p class="text-xs sm:text-sm md:text-lg lg:text-xl font-light">as of 31/07/2020,18:37</p>
         </div>
-        <div class=" font-bold"><h1>10 0000,00 $</h1></div>
+        <div class="font-bold"><h1 id="balance">10 0000,00 $</h1></div>
       </div>
       <div class="mt-4 md:mt-8">
         <div class=" flex justify-between gap-2 md:gap-4">
           <div class="bg-white rounded-lg overflow-y-hidden w-[65%] ">
-            <ul class=" h-[20rem] sm:h-[20rem] md:h-[23rem]  overflow-y-scroll scroll-hidden">
-              <li class="pt-1 border border-1 border-b-zink text-xs sm:text-sm md:text-lg ">
-                <div class="flex justify-between p-1 md:p-2">
-                  <div class="flex px-1">
-                    <div class="mx-2 md:mx-4  px-2 rounded-lg md:px-4 md:rounded-xl bg-green-400 text-white">deposite</div>
-                    <div class="mx-2 md:mx-4">date</div>
-                  </div>
-                  <div class="px-1">amount</div>
-                </div>
-              </li>
+            <ul class=" h-[20rem] sm:h-[20rem] md:h-[23rem]  overflow-y-scroll scroll-hidden" id="movements">
               <li class="border border-1 bordert-b-zink text-xs sm:text:sm md:text-lg ">
                 <div class="flex justify-between p-1 md:p-2">
                   <div class="flex px-1">
                     <div class="mx-2 md:mx-4  px-2 rounded-lg md:px-4 md:rounded-xl bg-green-400 text-white">deposite</div>
                     <div class="mx-2 md:mx-4">date</div>
                   </div>
-                  <div class="px-1">amount</div>
-                </div>
-              </li>
-              <li class="border border-1 bordert-b-zink text-xs sm:text:sm md:text-lg ">
-                <div class="flex justify-between p-1 md:p-2">
-                  <div class="flex px-1">
-                    <div class="mx-2 md:mx-4  px-2 rounded-lg md:px-4 md:rounded-xl bg-green-400 text-white">deposite</div>
-                    <div class="mx-2 md:mx-4">date</div>
-                  </div>
-                  <div class="px-1">amount</div>
-                </div>
-              </li>
-              <li class="border border-1 bordert-b-zink text-xs sm:text:sm md:text-lg ">
-                <div class="flex justify-between p-1 md:p-2">
-                  <div class="flex px-1">
-                    <div class="mx-2 md:mx-4  px-2 rounded-lg md:px-4 md:rounded-xl bg-green-400 text-white">deposite</div>
-                    <div class="mx-2 md:mx-4">date</div>
-                  </div>
-                  <div class="px-1">amount</div>
-                </div>
-              </li>
-              <li class="border border-1 bordert-b-zink text-xs sm:text:sm md:text-lg ">
-                <div class="flex justify-between p-1 md:p-2">
-                  <div class="flex px-1">
-                    <div class="mx-2 md:mx-4  px-2 rounded-lg md:px-4 md:rounded-xl bg-green-400 text-white">deposite</div>
-                    <div class="mx-2 md:mx-4">date</div>
-                  </div>
-                  <div class="px-1">amount</div>
-                </div>
-              </li>
-              <li class="border border-1 bordert-b-zink text-xs sm:text:sm md:text-lg ">
-                <div class="flex justify-between p-1 md:p-2">
-                  <div class="flex px-1">
-                    <div class="mx-2 md:mx-4  px-2 rounded-lg md:px-4 md:rounded-xl bg-green-400 text-white">deposite</div>
-                    <div class="mx-2 md:mx-4">date</div>
-                  </div>
-                  <div class="px-1">amount</div>
-                </div>
-              </li>
-              <li class="border border-1 bordert-b-zink text-xs sm:text:sm md:text-lg ">
-                <div class="flex justify-between p-1 md:p-2">
-                  <div class="flex px-1">
-                    <div class="mx-2 md:mx-4  px-2 rounded-lg md:px-4 md:rounded-xl bg-green-400 text-white">deposite</div>
-                    <div class="mx-2 md:mx-4">date</div>
-                  </div>
-                  <div class="px-1">amount</div>
-                </div>
-              </li>
-              <li class="border border-1 bordert-b-zink text-xs sm:text:sm md:text-lg ">
-                <div class="flex justify-between p-1 md:p-2">
-                  <div class="flex px-1">
-                    <div class="mx-2 md:mx-4  px-2 rounded-lg md:px-4 md:rounded-xl bg-green-400 text-white">deposite</div>
-                    <div class="mx-2 md:mx-4">date</div>
-                  </div>
-                  <div class="px-1">amount</div>
-                </div>
-              </li>
-              <li class="border border-1 bordert-b-zink text-xs sm:text:sm md:text-lg ">
-                <div class="flex justify-between p-1 md:p-2">
-                  <div class="flex px-1">
-                    <div class="mx-2 md:mx-4  px-2 rounded-lg md:px-4 md:rounded-xl bg-green-400 text-white">deposite</div>
-                    <div class="mx-2 md:mx-4">date</div>
-                  </div>
-                  <div class="px-1">amount</div>
-                </div>
-              </li>
-              <li class="border border-1 bordert-b-zink text-xs sm:text:sm md:text-lg ">
-                <div class="flex justify-between p-1 md:p-2">
-                  <div class="flex px-1"> 
-                    <div class="mx-2 md:mx-4  px-2 rounded-lg md:px-4 md:rounded-xl bg-green-400 text-white">deposite</div>
-                    <div class="mx-2 md:mx-4">date</div>
-                  </div>
-                  <div class="px-1">amount</div>
-                </div>
-              </li>
-              <li class="border border-1 bordert-b-zink text-xs sm:text:sm md:text-lg ">
-                <div class="flex justify-between p-1 md:p-2">
-                  <div class="flex px-1">
-                    <div class="mx-2 md:mx-4  px-2 rounded-lg md:px-4 md:rounded-xl bg-green-400 text-white">deposite</div>
-                    <div class="mx-2 md:mx-4">date</div>
-                  </div>
-                  <div class="px-1">amount</div>
-                </div>
-              </li>
-              <li class="border border-1 bordert-b-zink text-xs sm:text:sm md:text-lg ">
-                <div class="flex justify-between p-1 md:p-2">
-                  <div class="flex px-1">
-                    <div class="mx-2 md:mx-4  px-2 rounded-lg md:px-4 md:rounded-xl bg-green-400 text-white">deposite</div>
-                    <div class="mx-2 md:mx-4">date</div>
-                  </div>
-                  <div class="px-1">amount</div>
-                </div>
-              </li>
-              <li class="border border-1 bordert-b-zink text-xs sm:text:sm md:text-lg ">
-                <div class="flex justify-between p-1 md:p-2">
-                  <div class="flex px-1">
-                    <div class="mx-2 md:mx-4  px-2 rounded-lg md:px-4 md:rounded-xl bg-green-400 text-white">deposite</div>
-                    <div class="mx-2 md:mx-4">date</div>
-                  </div>
-                  <div class="px-1">amount</div>
+                  <div class="px-1">1500</div>
                 </div>
               </li>
             </ul>
@@ -184,14 +78,14 @@
               <div class="md:mt-1 xl:mt-2">
                 <div class="flex flex-wrap sm:flex-nowrap gap-1 lg:gap-2">
                   <div>
-                    <div><input type="text" class=" rounded-lg md:rounded-xl w-14 sm:w-20 md:w-26 lg:w-32 sm:px-1 lg:px-2"></div>
+                    <div><input type="text" class=" rounded-lg md:rounded-xl w-14 sm:w-20 md:w-26 lg:w-32 sm:px-1 lg:px-2" id="transfortouser"></div>
                     <div class="flex justify-center text-xs sm:text-sm px-1">transfor to</div>
                   </div>
                   <div>
-                    <div><input type="number" class=" rounded-lg md:rounded-xl w-14 sm:w-20 md:w-26 lg:w-32 sm:px-1 lg:px-2"></div>
+                    <div><input type="number" class=" rounded-lg md:rounded-xl w-14 sm:w-20 md:w-26 lg:w-32 sm:px-1 lg:px-2" id="amounttouser"></div>
                     <div class="flex justify-center text-xs sm:text-sm ">amount</div>
                   </div>
-                  <div><i class="fa-solid fa-arrow-right px-1 md:px-2 xl:px-4 py-0  rounded-md md:rounded-lg text-xs lg:text-md bg-white"></i></div>
+                  <div><i class="fa-solid fa-arrow-right px-1 md:px-2 xl:px-4 py-0  rounded-md md:rounded-lg text-xs lg:text-md bg-white" id="sendamount"></i></div>
                 </div>
               </div>
             </div>
@@ -200,10 +94,10 @@
               <div class="mt-1 lg:mt-2">
                 <div class="flex flex-wrap sm:flex-nowrap gap-1 lg:gap-2">
                   <div>
-                    <div><input type="number" class="rounded-lg md:rounded-xl w-14 sm:w-20 md:w-26 lg:w-32 sm:px-1 lg:px-2"></div>
+                    <div><input type="number" class="rounded-lg md:rounded-xl w-14 sm:w-20 md:w-26 lg:w-32 sm:px-1 lg:px-2" id="reqamount"></div>
                     <div class="flex justify-center text-xs sm:text-sm ">Amount</div>
                   </div>
-                  <div><i class="fa-solid fa-arrow-right px-1 md:px-2 xl:px-4 py-0 bg-white rounded-md md:rounded-lg text-xs lg:text-md"></i></div>
+                  <div><i class="fa-solid fa-arrow-right px-1 md:px-2 xl:px-4 py-0 bg-white rounded-md md:rounded-lg text-xs lg:text-md" id=reqloan></i></div>
                 </div>
               </div>
             </div>
@@ -212,14 +106,14 @@
               <div class="mt-1 lg:mt-2">
                 <div class="flex flex-wrap sm:flex-nowrap gap-1 lg:gap-2">
                   <div>
-                    <div><input type="text" class="rounded-lg md:rounded-xl w-14 sm:w-20 md:w-26 lg:w-32 sm:px-1 lg:px-2"></div>
+                    <div><input type="text" class="rounded-lg md:rounded-xl w-14 sm:w-20 md:w-26 lg:w-32 sm:px-1 lg:px-2" id="closeuser"></div>
                     <div class="flex justify-center text-xs sm:text-sm ">conform user</div>
                   </div>
                   <div>
-                    <div><input type="text" class=" rounded-lg md:rounded-xl w-14 sm:w-20 md:w-26 lg:w-32 sm:px-1 lg:px-2"></div>
+                    <div><input type="text" class=" rounded-lg md:rounded-xl w-14 sm:w-20 md:w-26 lg:w-32 sm:px-1 lg:px-2" id="closepin"></div>
                     <div class="flex justify-center text-xs sm:text-sm flex-wrap ">conform pin</div>
                   </div>
-                  <div><i class="fa-solid fa-arrow-right ml-[-0.5rem] sm:ml-0 px-1 md:px-2 xl:px-4 py-0  bg-white rounded-md md:rounded-lg text-xs lg:text-md"></i></div>
+                  <div><i class="fa-solid fa-arrow-right ml-[-0.5rem] sm:ml-0 px-1 md:px-2 xl:px-4 py-0  bg-white rounded-md md:rounded-lg text-xs lg:text-md" id="closeacount"></i></div>
                 </div>
               </div>
             </div>
@@ -228,10 +122,10 @@
       </div>
       <div class=" gap-1 mt-4">
         <div class=" flex justify-between sm:px-12 flex-wrap  text-md lg:text-2xl">
-            <div class="text-green-400 "><span class="text-xs text-black text-bold">IN</span>10000,00$</div>
-            <div class="text-red-500"><span class="text-xs text-black text-bold">OUT</span>1000,00$</div>
-            <div class="text-green-400"><SPAN class="text-xs text-black text-bold">INT</SPAN>100,00$</div>
-            <span class="text-xs font-semibold"><i class="fa-solid fa-arrow-down text-xs font-semibold"></i>SORT</span>
+            <div class="text-green-400" id="inamount"><span class="text-xs text-black text-bold" id="in">IN</span>10000,00$</div>
+            <div class="text-red-500" id="outamount"><span class="text-xs text-black text-bold">OUT</span>1000,00$</div>
+            <div class="text-green-400" id="intamount"><SPAN class="text-xs text-black text-bold">INT</SPAN>100,00$</div>
+            <span class="text-xs font-semibold" id="sortto"><i class="fa-solid fa-arrow-down text-xs font-semibold"></i>SORT</span>
         </div>
         <div class="mt-1 lg:mt-4 text-xs px-0 sm:px-12 px-auto">You will be logged out in <span class="font-semibold">09:30</span></div>
       </div>
