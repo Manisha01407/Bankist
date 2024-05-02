@@ -75,7 +75,7 @@ const calcdisplaysummary=function(acc){
   const out=`<span class="text-xs text-black text-bold" id="in">OUT</span> `;
   outamount.insertAdjacentHTML('afterbegin',out);
   
-  intamount.textContent=`${intrest}$`;
+  intamount.textContent=`${intrest.toFixed(2)}$`;
   const int=`<span class="text-xs text-black text-bold" id="in">INT</span> `;
   intamount.insertAdjacentHTML('afterbegin',int);
 }
@@ -120,7 +120,7 @@ btnlogin.addEventListener('click',function(e){
     e.preventDefault();
 
     curraccount=account.find(function(acc){return acc.username===inputloginusername.value});
-    if(curraccount?.pin===Number(inputloginpin.value)){
+    if(curraccount?.pin=== +inputloginpin.value){
       
       welcome.textContent=`welcome back , ${curraccount.owner.split(' ')[0]}`;
       mainblock.style.opacity=100;
@@ -132,7 +132,7 @@ btnlogin.addEventListener('click',function(e){
 
 closeacount.addEventListener('click',function(e){
   e.preventDefault();
-  if(curraccount.username===closeuser.value && curraccount.pin===Number(closepin.value)){
+  if(curraccount.username===closeuser.value && curraccount.pin === +closepin.value){
   
     const index=account.findIndex(function(acc){
       return acc.username===curraccount.username;
@@ -149,9 +149,9 @@ sendamount.addEventListener('click',function(e){
   let fi=account.find(function(cur){
     return cur.username===transfortouser.value;
   });
-  if(curraccount.balance>=Number(amounttouser.value) && fi && amounttouser.value>0 && fi?.username !== curraccount.username){
-    curraccount.movements.push(-amounttouser.value);
-    fi.movements.push(Number(amounttouser.value));
+  if(curraccount.balance >= Math.floor(+amounttouser.value) && fi && Math.floor(+amounttouser.value)>0 && fi?.username !== curraccount.username){
+    curraccount.movements.push(Math.ceil(-amounttouser.value));
+    fi.movements.push(Math.floor(+amounttouser.value));
     updateUI(curraccount);
   }
   transfortouser.value=amounttouser.value='';
@@ -159,7 +159,7 @@ sendamount.addEventListener('click',function(e){
 
 reqloan.addEventListener('click',function(e){
   e.preventDefault();
-  const amount=Number(reqamount.value);
+  const amount=Math.floor(+reqamount.value);
   if(amount>0 && curraccount.movements.some(function(mov){
     return mov>=amount*0.1;
   })){
@@ -176,7 +176,6 @@ sortto.addEventListener('click',function(e){
   sort=!sort;
 });
 
-
 // calculating overal balance in all accounts
 const overalbalance=account
       .map(curr=>curr.movements)
@@ -184,42 +183,3 @@ const overalbalance=account
       .reduce((acc,cur)=>acc+cur,0);
 console.log(overalbalance);   //13800
 
-
-
-
-const move=[-130,20,3000,1500,15,2,-17,-4];
-// equality
-console.log(move.includes(-130)); //true
-console.log(move.some(function(mov){
-  return mov===-130;
-})) //true 
-const any=move.some(function(mov){
-  return mov>0;
-})
-console.log(any);   //true
-console.log(move.every(function(mov){
-  return mov>0;
-}))   //false
-
-//flat and flatmap
-
-const arr=[[1,2,3],4,5,[6,7,8]];
-console.log(arr.flat());  //(8) [1, 2, 3, 4, 5, 6, 7, 8]
-const arr1=[[[1,2],3],4,5,[6,7,[8,9,10]],11];
-console.log(arr1.flat(2));  //(11) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-
-// sorting
-// ascending order
-move.sort((a,b)=>{
-  if(a>b) return 1;
-  if(a<b) return -1;
-})
-// move.sort((a,b) => a-b)
-console.log(move);
-// decending order
-move.sort((a,b)=>{
-  if(a>b) return -1
-  if(a<b) return 1;
-})
-// move.sort((a,b) => b-a)
-console.log(move);
